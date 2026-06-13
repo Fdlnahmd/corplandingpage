@@ -9,14 +9,14 @@ const reasons = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-blue-50 overflow-hidden">
+    <section id="about" className="py-24 bg-slate-50 overflow-hidden border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           
           {/* Text Content */}
           <div className="mb-12 lg:mb-0 reveal-left">
-            <h2 className="text-sm font-bold text-blue-700 uppercase tracking-widest mb-1">Why Partner with Us?</h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight" style={{ transitionDelay: '100ms' }}>
+            <h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Why Partner with Us?</h2>
+            <h3 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6 leading-tight" style={{ transitionDelay: '100ms' }}>
               We partner with leaders to shape the future.
             </h3>
             <p className="text-lg text-slate-500 mb-8 leading-relaxed" style={{ transitionDelay: '200ms' }}>
@@ -26,7 +26,7 @@ export default function About() {
             <ul className="space-y-3 mb-10" style={{ transitionDelay: '300ms' }}>
               {reasons.map((reason, index) => (
                 <li key={index} className="flex items-center gap-3 text-sm text-slate-700 font-medium">
-                  <div className="w-5 h-5 rounded-full bg-blue-700 flex items-center justify-center text-white text-[10px] flex-shrink-0">✓</div>
+                  <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0" />
                   <span>{reason}</span>
                 </li>
               ))}
@@ -34,32 +34,28 @@ export default function About() {
             
             <a
               href="#portfolio"
-              className="inline-flex items-center text-blue-700 text-sm font-bold hover:underline focus:outline-none"
+              className="inline-flex items-center text-slate-900 text-sm font-medium hover:text-emerald-500 transition-colors focus:outline-none"
               style={{ transitionDelay: '400ms' }}
             >
               Discover our work
-              <ArrowRight className="ml-2 -mr-1 h-4 w-4" aria-hidden="true" />
+              <ArrowRight className="ml-2 -mr-1 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </a>
           </div>
 
           {/* Image Content */}
           <div className="relative reveal-right">
-            {/* Decorative pattern behind image */}
-            <div className="absolute top-0 -right-4 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
-            <div className="absolute -bottom-8 -left-4 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
-            
-            <div className="relative rounded-2xl overflow-hidden shadow-xl ring-1 ring-slate-900/5 aspect-[4/5] object-cover">
-              <img
-                src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                alt="Business professionals collaborating in a bright modern office"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+            <div className="relative rounded-2xl overflow-hidden shadow-sm border border-slate-200 bg-white aspect-[4/5] flex items-center justify-center">
+              <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[80%] h-[80%] text-slate-200">
+                <rect x="50" y="50" width="300" height="400" rx="40" stroke="currentColor" strokeWidth="2" strokeDasharray="8 8"/>
+                <circle cx="200" cy="250" r="100" stroke="currentColor" strokeWidth="2"/>
+                <circle cx="200" cy="250" r="40" fill="#10B981" fillOpacity="0.1" stroke="#10B981" strokeWidth="2"/>
+              </svg>
             </div>
             
-            <div className="absolute bottom-[-1.5rem] right-[-1.5rem] bg-white p-6 rounded-xl shadow-lg border border-slate-100 hidden md:block">
+            <div className="absolute bottom-[-1.5rem] right-[-1.5rem] bg-white p-6 rounded-xl shadow-sm border border-slate-200 hidden md:block">
               <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Trusted by</p>
-              <p className="text-3xl font-extrabold text-slate-900 mt-1">Fortune 500</p>
-              <p className="text-xs font-bold text-blue-700 mt-1">Companies worldwide</p>
+              <p className="text-3xl font-serif text-slate-900 mt-1">Fortune 500</p>
+              <p className="text-xs font-medium text-slate-500 mt-1">Companies worldwide</p>
             </div>
           </div>
 

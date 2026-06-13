@@ -4,7 +4,7 @@ const projects = [
   {
     title: 'Global Supply Chain Optimization',
     category: 'Operations',
-    image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8ed7c8263e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
   },
   {
     title: 'Retail Bank Digital Transformation',
@@ -39,15 +39,16 @@ export default function Portfolio() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-sm font-bold text-blue-700 tracking-widest uppercase mb-1 reveal">Our Work</h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight reveal" style={{ transitionDelay: '100ms' }}>
+            <h2 className="text-xs font-bold text-slate-400 tracking-widest uppercase mb-2 reveal">Our Work</h2>
+            <h3 className="text-3xl md:text-4xl font-serif text-slate-900 leading-tight reveal" style={{ transitionDelay: '100ms' }}>
               Impactful solutions for complex problems.
             </h3>
           </div>
           <a
-            href="#contact"
-            className="inline-flex items-center text-slate-600 hover:text-blue-700 font-bold text-sm transition-colors focus:outline-none focus-visible:underline reveal"
+            href="#"
+            className="inline-flex items-center text-slate-600 hover:text-emerald-500 font-medium text-sm transition-colors focus:outline-none focus-visible:underline reveal"
             style={{ transitionDelay: '200ms' }}
+            onClick={(e) => e.preventDefault()}
           >
             View all case studies
             <ExternalLink className="ml-2 w-4 h-4" />
@@ -56,36 +57,23 @@ export default function Portfolio() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <a 
+            <div 
               key={index} 
-              href="#contact"
-              className="group relative rounded-lg overflow-hidden bg-slate-200 shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300 reveal focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 block"
+              className="group relative rounded-lg overflow-hidden bg-white border border-slate-200 transition-colors duration-300 reveal"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="aspect-[4/3] w-full overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
+              <div className="aspect-[4/3] w-full overflow-hidden bg-slate-50 flex items-center justify-center border-b border-slate-200">
+                <svg viewBox="0 0 100 100" className="w-1/2 h-1/2 text-slate-200" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 50 L80 50 M50 20 L50 80" />
+                  <circle cx="50" cy="50" r={10 + (index % 4) * 10} strokeOpacity="0.5" />
+                </svg>
               </div>
               
-              {/* Overlay for hover state */}
-              <div className="absolute inset-0 bg-blue-700/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                <span 
-                  className="text-[10px] text-white font-bold tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
-                >
-                  View Project
-                </span>
+              <div className="p-4 text-left">
+                 <p className="text-xs font-medium text-slate-500 uppercase tracking-widest mb-1">{project.category}</p>
+                 <h4 className="text-sm font-medium text-slate-900 line-clamp-1">{project.title}</h4>
               </div>
-
-              {/* Permanent clear desc bar at bottom */}
-              <div className="absolute bottom-0 inset-x-0 bg-white p-4 border-t border-slate-100 transform translate-y-0 text-left">
-                 <p className="text-[10px] font-bold text-blue-700 uppercase tracking-widest mb-1">{project.category}</p>
-                 <h4 className="text-sm font-bold text-slate-900 line-clamp-1">{project.title}</h4>
-              </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>

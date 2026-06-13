@@ -29,11 +29,11 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-slate-50 border-t border-slate-100">
+    <section className="py-24 bg-slate-50 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-sm font-bold text-blue-700 uppercase tracking-widest mb-1 reveal">Client Perspectives</h2>
-          <h3 className="text-3xl md:text-4xl font-extrabold text-slate-900 reveal" style={{ transitionDelay: '100ms' }}>
+          <h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 reveal">Client Perspectives</h2>
+          <h3 className="text-3xl md:text-4xl font-serif text-slate-900 reveal" style={{ transitionDelay: '100ms' }}>
             Trusted by industry leaders.
           </h3>
         </div>
@@ -42,19 +42,16 @@ export default function Testimonials() {
           {testimonials.map((t, index) => (
             <div 
               key={index} 
-              className="bg-white p-6 rounded-lg shadow-sm border border-slate-100 flex flex-col items-start transition-shadow hover:shadow-md cursor-default reveal-right"
+              className="bg-white p-6 rounded-xl border border-slate-200 flex flex-col items-start cursor-default reveal-right"
               style={{ transitionDelay: `${index * 150}ms` }}
             >
               <blockquote className="flex-1 mb-6">
-                <p className="text-sm italic text-slate-500 leading-tight border-l-2 border-blue-700 pl-4 py-1">"{t.quote}"</p>
+                <p className="text-sm italic text-slate-600 leading-tight border-l-2 border-slate-200 pl-4 py-1">"{t.quote}"</p>
               </blockquote>
-              <div className="flex items-center gap-3 mt-auto border-t border-slate-50 pt-4 w-full">
-                <img 
-                  src={t.avatar} 
-                  alt={t.name}
-                  className="w-10 h-10 rounded-full object-cover bg-slate-200"
-                  loading="lazy"
-                />
+              <div className="flex items-center gap-3 mt-auto border-t border-slate-100 pt-4 w-full">
+                <div className="w-10 h-10 rounded-full border border-slate-200 bg-slate-50 flex items-center justify-center text-slate-500 text-xs font-medium uppercase">
+                  {t.name.split(' ').map(n => n[0]).join('')}
+                </div>
                 <div>
                   <div className="text-xs font-bold text-slate-900">{t.name}</div>
                   <div className="text-[10px] uppercase font-bold tracking-wider text-slate-400 mt-0.5">{t.role}, {t.company}</div>

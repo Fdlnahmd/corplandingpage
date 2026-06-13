@@ -3,8 +3,8 @@ import { Menu, X, ChevronRight } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
-  { name: 'Services', href: '#services' },
   { name: 'About', href: '#about' },
+  { name: 'Services', href: '#services' },
   { name: 'Portfolio', href: '#portfolio' },
   { name: 'Contact', href: '#contact' },
 ];
@@ -62,11 +62,11 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <a href="#home" onClick={(e) => handleClick(e, '#home')} className="flex items-center gap-2 outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm">
-              <div className="w-8 h-8 bg-blue-700 rounded-md flex items-center justify-center">
+            <a href="#home" onClick={(e) => handleClick(e, '#home')} className="flex items-center gap-2 outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-sm">
+              <div className="w-8 h-8 bg-slate-900 rounded-md flex items-center justify-center">
                 <span className="text-white font-bold text-xl leading-none">A</span>
               </div>
-              <span className="font-extrabold text-xl text-slate-800 tracking-tight">AstraCorp</span>
+              <span className="font-serif font-bold text-xl text-slate-900 tracking-tight">AstraCorp</span>
             </a>
           </div>
 
@@ -77,10 +77,10 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleClick(e, link.href)}
-                className={`text-sm font-medium transition-colors duration-200 outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-1 py-0.5 ${
+                className={`text-sm font-medium transition-colors duration-200 outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-sm px-1 py-0.5 ${
                   activeSection === link.href.substring(1)
-                    ? 'text-blue-700'
-                    : 'text-slate-600 hover:text-blue-700'
+                    ? 'text-slate-900'
+                    : 'text-slate-500 hover:text-slate-900'
                 }`}
               >
                 {link.name}
@@ -89,7 +89,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={(e) => handleClick(e, '#contact')}
-              className="inline-flex items-center justify-center px-6 py-2 border border-transparent text-sm font-semibold rounded-full text-white bg-blue-700 hover:bg-blue-800 shadow-sm transition-all active:scale-95 duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700"
+              className="inline-flex items-center justify-center px-5 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-emerald-500 hover:bg-emerald-600 shadow-sm transition-all active:scale-95 duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
             >
               Get Started
             </a>
@@ -99,7 +99,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-700 transition-colors"
+              className="inline-flex items-center justify-center p-2 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-emerald-500 transition-colors"
               aria-expanded={isOpen}
             >
               <span className="sr-only">Open main menu</span>
@@ -116,7 +116,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div 
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-96 opacity-100 bg-white border-b border-gray-100 shadow-sm' : 'max-h-0 opacity-0'
+          isOpen ? 'max-h-96 opacity-100 bg-white border-b border-slate-100 shadow-sm' : 'max-h-0 opacity-0'
         }`}
       >
         <div className="px-4 pt-2 pb-6 flex flex-col space-y-2">
@@ -127,8 +127,8 @@ export default function Navbar() {
               onClick={(e) => handleClick(e, link.href)}
               className={`block px-3 py-3 rounded-md text-base font-medium transition-colors ${
                 activeSection === link.href.substring(1)
-                  ? 'text-blue-700 bg-blue-50'
-                  : 'text-gray-700 hover:text-blue-700 hover:bg-gray-50'
+                  ? 'text-slate-900 bg-slate-50'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
               {link.name}
@@ -138,7 +138,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={(e) => handleClick(e, '#contact')}
-              className="flex w-full items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700"
+              className="flex w-full items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-500 hover:bg-emerald-600 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
             >
               Get Started
             </a>

@@ -38,8 +38,8 @@ export default function Services() {
     <section id="services" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-sm font-bold text-blue-700 tracking-widest uppercase mb-1 reveal">Our Expertise</h2>
-          <h3 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 reveal" style={{ transitionDelay: '100ms' }}>Comprehensive services for modern businesses.</h3>
+          <h2 className="text-xs font-bold text-slate-400 tracking-widest uppercase mb-2 reveal">Our Expertise</h2>
+          <h3 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6 reveal" style={{ transitionDelay: '100ms' }}>Comprehensive services for modern businesses.</h3>
           <p className="text-lg text-slate-500 reveal" style={{ transitionDelay: '200ms' }}>
             We deliver tailored solutions across the business spectrum, combining deep industry knowledge with rigorous analysis.
           </p>
@@ -51,10 +51,10 @@ export default function Services() {
             return (
               <div 
                 key={index}
-                className="group p-6 rounded-xl bg-white border border-slate-100 transition-shadow duration-300 hover:shadow-md cursor-default reveal"
+                className="group p-6 rounded-xl bg-white border border-slate-200 cursor-default reveal"
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
-                <div className="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 flex items-center justify-center mb-4">
                   <Icon className="w-5 h-5" />
                 </div>
                 <h4 className="text-lg font-bold text-slate-900 mb-2">{service.title}</h4>
@@ -62,8 +62,9 @@ export default function Services() {
                   {service.description}
                 </p>
                 <a 
-                  href="#contact" 
-                  className="inline-flex items-center text-blue-700 font-medium hover:text-blue-800 focus:outline-none focus-visible:underline"
+                  href="#" 
+                  className="inline-flex items-center text-slate-600 font-medium hover:text-emerald-500 transition-colors focus:outline-none focus-visible:underline text-sm"
+                  onClick={(e) => e.preventDefault()}
                 >
                   Learn more 
                   <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />

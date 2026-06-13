@@ -58,7 +58,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-200 selection:text-blue-900">
+    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-emerald-100 selection:text-emerald-900">
       <Navbar />
       
       <main>
@@ -77,7 +77,7 @@ export default function App() {
       {/* Back to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-8 right-8 p-3 rounded-full bg-blue-700 text-white shadow-lg hover:bg-blue-800 hover:-translate-y-1 transition-all duration-300 z-40 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 ${
+        className={`fixed bottom-8 right-8 p-3 rounded-full bg-white text-slate-600 border border-slate-200 shadow-sm hover:text-slate-900 hover:border-slate-300 hover:shadow-md hover:-translate-y-1 transition-all duration-300 z-40 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 ${
           showTopBtn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
         }`}
         aria-label="Back to top"

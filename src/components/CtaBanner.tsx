@@ -27,22 +27,18 @@ export default function CtaBanner() {
   };
 
   return (
-    <section className="bg-blue-700 py-20 relative overflow-hidden reveal-scale">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-blue-600 rounded-full mix-blend-multiply opacity-50 filter blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply opacity-50 filter blur-3xl"></div>
-      
+    <section className="bg-white py-24 relative overflow-hidden reveal-scale border-t border-slate-200">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
-        <h2 className="text-sm font-bold text-blue-200 uppercase tracking-widest mb-3">Get Started</h2>
-        <h3 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+        <h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Get Started</h2>
+        <h3 className="text-3xl md:text-5xl font-serif text-slate-900 mb-6 tracking-tight">
           Ready to scale?
         </h3>
-        <p className="text-blue-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+        <p className="text-slate-500 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
           Subscribe to our newsletter for exclusive insights, industry analysis, and operational best practices.
         </p>
         
         <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto relative z-10">
-          <div className="flex flex-col sm:flex-row gap-2 bg-white/10 p-1 rounded-lg backdrop-blur-sm border border-white/20">
+          <div className="flex flex-col sm:flex-row gap-2 bg-white p-1 rounded-md border border-slate-200 shadow-sm relative">
             <div className="relative flex-grow">
               <label htmlFor="email-address" className="sr-only">Email address</label>
               <input
@@ -54,7 +50,7 @@ export default function CtaBanner() {
                 disabled={status === 'loading' || status === 'success'}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 placeholder-slate-400 bg-white text-sm text-slate-900 rounded focus:outline-none disabled:bg-slate-100 disabled:cursor-not-allowed transition-all font-medium"
+                className="w-full px-4 py-3 placeholder-slate-400 bg-slate-50 text-sm text-slate-900 rounded focus:outline-none focus:bg-white focus:ring-2 focus:ring-inset focus:ring-emerald-500 disabled:bg-slate-100 disabled:cursor-not-allowed transition-colors font-medium border border-transparent"
                 placeholder="Business email"
               />
             </div>
@@ -62,7 +58,7 @@ export default function CtaBanner() {
             <button
               type="submit"
               disabled={status === 'loading' || status === 'success'}
-              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-bold rounded text-blue-700 bg-white hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-700 focus:ring-white shadow-sm disabled:bg-slate-200 disabled:text-slate-500 disabled:cursor-not-allowed transition-all active:scale-95"
+              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded text-white bg-emerald-500 hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 shadow-sm disabled:bg-slate-200 disabled:text-slate-500 disabled:cursor-not-allowed transition-all active:scale-95"
             >
               {status === 'idle' && (
                 <>
@@ -83,7 +79,7 @@ export default function CtaBanner() {
           </div>
           
           {/* Subtle success inline message instead of just button change */}
-          <div className={`mt-3 text-sm text-blue-50 transition-all duration-300 ${status === 'success' ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
+          <div className={`mt-3 text-sm text-slate-500 transition-all duration-300 ${status === 'success' ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
             Thank you! Please check your inbox to confirm.
           </div>
         </form>
