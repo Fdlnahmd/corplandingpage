@@ -33,13 +33,28 @@ export default function Hero() {
 
           {/* Image Content */}
           <div className="lg:col-span-6 relative animate-fade-in-up" style={{ animationDelay: '300ms', animationFillMode: 'both' }}>
-            <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-white aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3] flex items-center justify-center">
-              <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[80%] h-[80%] text-slate-200">
-                <rect x="50" y="50" width="300" height="300" rx="40" stroke="currentColor" strokeWidth="2" strokeDasharray="8 8"/>
-                <circle cx="200" cy="200" r="80" fill="currentColor" fillOpacity="0.3" stroke="currentColor" strokeWidth="2"/>
-                <path d="M200 50 L200 350 M50 200 L350 200" stroke="currentColor" strokeWidth="2" strokeOpacity="0.5"/>
-                <rect x="160" y="160" width="80" height="80" rx="20" fill="#10B981" />
-              </svg>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-100 aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3]">
+              <img
+                src="/hero-image.png"
+                alt="Corporate team reviewing strategies in a modern boardroom"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-2xl"></div>
+            </div>
+            
+            {/* Floating Element */}
+            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border border-slate-100 hidden sm:block">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center">
+                  <svg className="w-6 h-6 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Revenue Growth</p>
+                  <p className="text-xl font-serif font-bold text-slate-900">+124%</p>
+                </div>
+              </div>
             </div>
           </div>
           
